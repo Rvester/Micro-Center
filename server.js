@@ -7,7 +7,7 @@ require('dotenv').config()
 const app = express();
 
 const microRoutes = require('./routes/microRoutes')
-const micro = require('./models/micro')
+
 
 
 

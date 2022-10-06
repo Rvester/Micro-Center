@@ -2,7 +2,6 @@ const React = require('react')
 
 class DefaultLayout extends React.Component {
     render() {
-   const  {title, shipName} = this.props
         return (
             <html>
                 <head>
@@ -16,7 +15,7 @@ class DefaultLayout extends React.Component {
                     <nav>
                     
                     </nav>
-                    {this.props.children}
+                   
                 </body>
             </html>
         )

@@ -9,8 +9,8 @@ const microSchema = new Schema({
         name: {type:String, required: true},
         price: {type:Number, required: true},
         image : {type:String},
-        productDescrip: {type:String, required: true},
-        inventory: {type:String, required: true}     
+        productDescription: {type:String, required: true},
+        inventory: {type:Number, required: true}     
 })
 
 //create a Model from our Schema
