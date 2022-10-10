@@ -93,6 +93,7 @@ const showMicro = (req, res) => {
 module.exports = {
     showAllMicro,
     newMicro,
+    deleteMicro,
     updateMicro,
     createMicro,
     editMicro,
