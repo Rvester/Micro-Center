@@ -6,7 +6,7 @@ class Show extends React.Component{
         const {products} = this.props
         return(
             <DefaultLayout title={products.name}>
-                <div id='showpagecontainer'>
+                <div id='showContainer'>
                 <div id='imageshowpage'>
                     <img src={products.image}/>   
                 </div>
