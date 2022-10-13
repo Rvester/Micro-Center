@@ -1,3 +1,4 @@
+const express = require('express')
 const  micro = require('../models/micro')
 const seed = require('../models/seed')
 
@@ -11,14 +12,14 @@ const showAllMicro = (req, res) => {
        if (err){
         res.status(400).json(err)
        }else{
-        res.status(200).render('/Index', {micro: foundMicro})
+        res.status(200).render('Index', {micro: foundMicro})
        }
     }
 )}
 
 
 const newMicro = (req, res) => {
-    res.render('/New') 
+    res.render('New') 
 }
 
 
@@ -47,7 +48,7 @@ const createMicro = (req,res) => {
         if (err){
             res.status(400).json(err)
         }else {
-            res.status(200).redirect('/micro')
+            res.status(200).redirect('/micro/index')
         }
     })
 }
@@ -63,7 +64,7 @@ const editMicro = (req, res) => {
 }
 
 const seedMicro = (req, res) => {
-    micro.deleteMany({}, (err, deleteMicro) => {
+    micro.insertMany({}, (err, deleteMicro) => {
         if (err){
             res.status(400).json(err)
         }else {
@@ -71,7 +72,7 @@ const seedMicro = (req, res) => {
             if (err){
                 res.status(400).json(err)
             }else{
-                res.status(200).redirect('/micro')
+                res.status(200).redirect('/index')
             }
           })
         }
@@ -80,13 +81,15 @@ const seedMicro = (req, res) => {
 
 
 const showMicro = (req, res) => {
-    micro.findById(req.params.id, (err, showMicro) => {
-        if (err){
-            res.status(400).json(err)
-        }else {
-            res.status(200).render('/Show', {micro: showMicro})
-        }
-    })
+ console.log(req)
+    res.status(200).render('Show',seed[req.params.id]) 
+        //(err, showMicro) => {
+//         if (err){
+//             res.status(400).json(err)
+//         }else {
+//             res.status(200).render('Show', {product: [Number(seed)]})
+//         }
+//     })
 }
 
 

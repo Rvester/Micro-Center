@@ -5,7 +5,7 @@ const { showAllMicro, newMicro, deleteMicro, updateMicro, createMicro, editMicro
 
 
 
-router.get('/', showAllMicro)
+router.get('/index', showAllMicro)
 
 router.get('/new', newMicro)
 

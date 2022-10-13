@@ -1,37 +1,39 @@
 const React = require('react')
-const DefaultLayout = require('./layouts/DefaultLayout')
+const DefaultLayout = require('./layout/DefaultLayout')
+const products = require('../models/seed')
 
 class Show extends React.Component{
     render(){
-        const {products} = this.props
+        const {} = this.props
         return(
-            <DefaultLayout title={products.name}>
-                <div id='showContainer'>
-                <div id='imageshowpage'>
-                    <img src={products.image}/>   
+            <DefaultLayout title={this.props.name}>
+                <div id='show'>
+                    <a href = '/micro/index' className = 'showMenu'>Inventory</a>
+                    <br/>
+                <div id='imageShow'>
+                    <img src={this.props.image}/>   
                 </div>
                 <div id='productinfo'>
-                <h1>{products.name}</h1>
+                <h1>{this.props.name}</h1>
                 <p id='productprice'>
-                    {'$'+products.price}
+                    {'$'+this.props.price}
                 </p>
                 <p>
-                    {products.productDescription}
+                    {this.props.productDescription}
                 </p>
                 <p id='productinventory'>
-                    {products.inventory == 0? 'OUT OF STOCK' : products.inventory + ' In Stock'} 
+                    {this.props.inventory === 0 ? 'OUT OF STOCK' : `${this.props.inventory}  In Stock`} 
                 </p>
-            {products.inventory == 0? <button id='outofstock'> Out Of Stock</button> : 
-                <form action={`/micro/${products._id}/purchase?_method=PUT`} method='POST'>
-                        <button id='purchaseBtn'>
-                            Buy Now
+            {this.props.inventory === 0? <button id='outofstock'> Out Of Stock</button> : 
+                <form action={`/micro/${this.props.id}/?_method=PUT`} method='POST'>
+                        <button className ='buyBtn'>
+                            Buy
                         </button>
                 </form>}
-                <button>
-                    <a href={`/micro/${products._id}/edit`} id='editbutton' className='menulink' >Edit Product</a>
-                </button>
-                <form action={`/micro/${products._id}?_method=DELETE`}  method="POST">
-                    <input type='submit' value="Delete" id='deletebutton'/>
+                
+                <form action={`/micro/${this.props.id}?_method=DELETE`}  method="POST">
+                    {/* <input className = 'deleteBtn' type='submit' value="Delete" id='deletebutton'/> */}
+    
                 </form>
                 
                 </div>

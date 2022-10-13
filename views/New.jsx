@@ -1,12 +1,12 @@
 const React = require('react')
-const DefaultLayout = require('./layouts/DefaultLayout')
+const DefaultLayout = require('./layout/DefaultLayout')
 
 class New extends React.Component{
     render(){
         return(
             <DefaultLayout>
-                <h1>New Product</h1> 
-                <form action='/micro' method='POST' id='newform'>
+                <h1 className = 'newTitle'>New Product</h1> 
+                <form className = 'newForm' action='/micro/index' method='PUT'>
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='name' name='name'/> <br/>
                     
