@@ -5,7 +5,9 @@ const { showAllMicro, newMicro, deleteMicro, updateMicro, createMicro, editMicro
 
 
 
-router.get('/index', showAllMicro)
+router.get('/', showAllMicro)
+
+router.get('/seed', seedMicro)
 
 router.get('/new', newMicro)
 
@@ -17,7 +19,6 @@ router.post('/,', createMicro)
 
 router.get('/:id/edit', editMicro)
 
-router.get('/seed', seedMicro)
 
 router.get('/:id', showMicro)
 

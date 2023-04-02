@@ -3,12 +3,13 @@ const DefaultLayout = require('./layout/DefaultLayout')
 const products = require('../models/seed')
 
 class Show extends React.Component{
+   
     render(){
         const {} = this.props
         return(
             <DefaultLayout title={this.props.name}>
                 <div id='show'>
-                    <a href = '/micro/index' className = 'showMenu'>Inventory</a>
+                    <a href = '/micro' className = 'showMenu'>Inventory</a>
                     <br/>
                 <div id='imageShow'>
                     <img src={this.props.image}/>   
@@ -25,14 +26,14 @@ class Show extends React.Component{
                     {this.props.inventory === 0 ? 'OUT OF STOCK' : `${this.props.inventory}  In Stock`} 
                 </p>
             {this.props.inventory === 0? <button id='outofstock'> Out Of Stock</button> : 
-                <form action={`/micro/${this.props.id}/?_method=PUT`} method='POST'>
+                <form action={`/micro/${this.props._id}/?_method=PUT`} method='POST'>
                         <button className ='buyBtn'>
                             Buy
                         </button>
                 </form>}
                 
-                <form action={`/micro/${this.props.id}?_method=DELETE`}  method="POST">
-                    {/* <input className = 'deleteBtn' type='submit' value="Delete" id='deletebutton'/> */}
+                <form action={`/micro/${this.props._id}?_method=DELETE`}  method="POST">
+                    <input className = 'deleteBtn' type='submit' value="Delete" id='deletebutton'/>
     
                 </form>
                 

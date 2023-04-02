@@ -41,8 +41,8 @@ class DefaultLayout extends React.Component {
                         <p className = 'para'>This is a passion project for everything I love tech, this is based on Micro Center, a popular website (although not as good as new egg in my opinion)that sells multiple appliances from graphics cards to tv's</p>
                         <p className = 'para'>Here is my info below</p>
                         <p className = 'para'>Email: rasheem.khan94@gmail.com </p>
-                        <a href = 'https://github.com/Rvester'className = 'git'>GitHub</a> <br/>
-                        <a href = 'https://www.linkedin.com/in/rasheem-khan-9a6b38250/'className = 'git'>LinkedIn</a>
+                        <a href = 'https://github.com/Rvester'target = "_blank" className = 'git'>GitHub</a> <br/>
+                        <a href = 'https://www.linkedin.com/in/rasheem-khan-9a6b38250/' target = "_blank" className = 'git'>LinkedIn</a>
 
                     </div>
                  </div>

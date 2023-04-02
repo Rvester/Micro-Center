@@ -30,7 +30,7 @@ body, html {
 
 }
 
-.deleteBtn:hidden {
+.deleteBtn {
     border:none;
     width: 75px;
     padding: 20px;

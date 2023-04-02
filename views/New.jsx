@@ -6,7 +6,7 @@ class New extends React.Component{
         return(
             <DefaultLayout>
                 <h1 className = 'newTitle'>New Product</h1> 
-                <form className = 'newForm' action='/micro/index' method='PUT'>
+                <form className = 'newForm' action='/micro' method='POST'>
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='name' name='name'/> <br/>
                     
