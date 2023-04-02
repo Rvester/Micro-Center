@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 app.use(express.json());
-app.use("/micro", microRoutes);
+app.use("/", microRoutes);
 
 const port = process.env.PORT;
 
